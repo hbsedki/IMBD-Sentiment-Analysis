@@ -27,3 +27,8 @@ ml_pipeline 
 |_ models : this folder consists the trained model pipeline to be used in production(old version and new version of the model pipeline shall be stored here)       
    |_ requirements.txt : to be used to install the required packages to run the machine learning pipeline       
    |_ ML_full_pipeline.ipynb : the jupyter notebook file consisting of the full machine learning pipeline
+
+
+### Final Working Product:
+![WhatsApp Image 2024-05-31 at 7 40 05 PM](https://github.com/hbsedki/MovieSentimentAnalysis/assets/150509637/92a4efb6-1f32-4e01-bdbf-a314addc6f94)
+
