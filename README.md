@@ -33,7 +33,7 @@ Example:
 curl -X POST -H "Content-Type: application/json" -d '{"text": "This movie was amazing!"}' http://localhost:5000/predict
 The API will respond with the predicted sentiment (either "positive" or "negative").
 
-### Contribution Guidelines
+## Contribution Guidelines
 Contributions to this project are welcome. If you would like to contribute, please follow these guidelines:
 
 Fork the repository.
@@ -44,6 +44,6 @@ License
 This project is licensed under the MIT License.
 
 
-### Final Working Product:
+## Final Working Product:
 ![WhatsApp Image 2024-05-31 at 7 40 05 PM](https://github.com/hbsedki/MovieSentimentAnalysis/assets/150509637/92a4efb6-1f32-4e01-bdbf-a314addc6f94)
 
