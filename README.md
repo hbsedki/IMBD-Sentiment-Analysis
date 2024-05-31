@@ -1,25 +1,23 @@
-# MovieSentimentAnalysis
+# Automated Sentiment Analysis for IMDB Dataset
+## Project Overview
+This project aims to develop an efficient automated machine learning (AutoML) framework for sentiment analysis on the IMDB movie review dataset. Sentiment analysis is a crucial task in natural language processing, with applications in areas like market research, customer feedback analysis, and social media analysis. The goal of this project is to build a robust and scalable pipeline that can effectively classify the sentiment (positive or negative) of textual data from the IMDB dataset.
 
-Solution Design for the ML Pipeline
+## Dataset
+The IMDB dataset is a widely recognized benchmark for sentiment analysis, consisting of a large collection of movie reviews labeled with positive or negative sentiments. The dataset poses interesting challenges due to the nuances of language used in the reviews.
 
-Obtain the input data (most likely in .csv) and run data preprocessing before model training process:
-1. Numerical features – impute null values with mean values and apply min-max scaler
-2. Categorical features – impute null values with most frequent values (mode) and apply one-hot encoding
-3. Model Training process with built-in hyperparameter process using GridSearchCV
-4. Parameter grid is used to put in different values for each parameter
-5. GridSearchCV will choose the best parameter and use it to fit the model
+## Pipeline Steps
+Data Preprocessing: The raw text data is transformed into a format amenable to machine learning models. This includes tokenization, removal of stop words, and vectorization using TF-IDF.
+Feature Engineering: Additional features may be extracted from the text data to improve the model's performance.
+Model Training: Two models are trained and evaluated: a baseline logistic regression model and a fine-tuned BERT (Bidirectional Encoder Representations from Transformers) model.
+Model Evaluation: The trained models are evaluated using standard metrics such as accuracy, precision, recall, and F1 score.
+Model Deployment: The best-performing model is packaged and deployed as a Flask API, containerized using Docker for scalability and reproducibility.
+Setup Instructions
+Clone the repository: git clone https://github.com/your-username/automated-sentiment-analysis.git
+Create a virtual environment and activate it.
+Install the required dependencies: pip install -r requirements.txt
+Run the Flask API locally: python app.py
 
-Sample of the proposed pipeline structure:
-
-1. Model Evaluation will be done with Classification report to evaluate the model performance against each class, this case would be against class 0 and class 1 (binary classification) 
-2. The optimal model would be high recall, high precision and high accuracy in order to get the predictions right for class 0 and class 1 (to get the low-risk and high-risk loan prediction right)
-3. Model Deployment: in this demo the best model is exported into a joblib file and placed under the “models” directory. 
-4. A function to get the latest models is included in the pipeline to load the best available models from the directory based on modified date.
-5. The model file naming (.joblib) have also included the model score and the created date.
-6. The deployed model could use be use for prediction when there is new data comes into the pipeline (covered in the demo)
-7. Monitoring and fine-tuning: the model performance should be monitored and apply fine-tuning if needed when possible feature drifts / model’s metrics starts to decrease and have a drop in the accuracy.
-   
-Folder structure:
+## Folder structure:
 Folder structure:
 ml_pipeline   
 |_ data : this folder contains the data needed to train/predict   
@@ -27,6 +25,23 @@ ml_pipeline 
 |_ models : this folder consists the trained model pipeline to be used in production(old version and new version of the model pipeline shall be stored here)       
    |_ requirements.txt : to be used to install the required packages to run the machine learning pipeline       
    |_ ML_full_pipeline.ipynb : the jupyter notebook file consisting of the full machine learning pipeline
+
+## Usage
+The deployed Flask API can be used to classify the sentiment of input text. To use the API, send a POST request to the /predict endpoint with the text data in the request body.
+
+Example:
+curl -X POST -H "Content-Type: application/json" -d '{"text": "This movie was amazing!"}' http://localhost:5000/predict
+The API will respond with the predicted sentiment (either "positive" or "negative").
+
+### Contribution Guidelines
+Contributions to this project are welcome. If you would like to contribute, please follow these guidelines:
+
+Fork the repository.
+Create a new branch for your changes.
+Make your changes and ensure that the code passes all tests.
+Submit a pull request with a detailed description of your changes.
+License
+This project is licensed under the MIT License.
 
 
 ### Final Working Product:
