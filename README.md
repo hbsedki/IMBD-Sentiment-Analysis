@@ -13,7 +13,7 @@ The IMDB dataset is a widely recognized benchmark for sentiment analysis, consis
 - Model Deployment: The best-performing model is packaged and deployed as a Flask API, containerized using Docker for scalability and reproducibility.
   
 ## Setup Instructions
-Clone the repository: git clone https://github.com/your-username/automated-sentiment-analysis.git
+Clone the repository: git clone https://github.com/hbsedki/MovieSentimentAnalysis/.git
 Create a virtual environment and activate it.
 Install the required dependencies: pip install -r requirements.txt
 Run the Flask API locally: python app.py
