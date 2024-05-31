@@ -20,5 +20,10 @@ Sample of the proposed pipeline structure:
 7. Monitoring and fine-tuning: the model performance should be monitored and apply fine-tuning if needed when possible feature drifts / model’s metrics starts to decrease and have a drop in the accuracy.
    
 Folder structure:
+Folder structure:
 ml_pipeline   
-|_ data : this folder contains the data needed to train/predict   |_ documentations : this folder contains the documentation related to the pipeline design   |_ models : this folder consists the trained model pipeline to be used in production(old version and new version of the model pipeline shall be stored here)       |_ requirements.txt : to be used to install the required packages to run the machine learning pipeline       |_ ML_full_pipeline.ipynb : the jupyter notebook file consisting of the full machine learning pipeline
+|_ data : this folder contains the data needed to train/predict   
+|_ documentations : this folder contains the documentation related to the pipeline design   
+|_ models : this folder consists the trained model pipeline to be used in production(old version and new version of the model pipeline shall be stored here)       
+   |_ requirements.txt : to be used to install the required packages to run the machine learning pipeline       
+   |_ ML_full_pipeline.ipynb : the jupyter notebook file consisting of the full machine learning pipeline
