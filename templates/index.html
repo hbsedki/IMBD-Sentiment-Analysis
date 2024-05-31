@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Reviews Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Movie Reviews Sentiment Analysis</h1>
+            <p>Enter a movie review to find out whether the sentiment is positive or negative.</p>
+        </div>
+    </header>
+
+    <div class="card">
+        <div class="img"></div>
+        <div class="container">
+            <h2>Analyze Your Review</h2>
+            <form id="review-form">
+                <textarea id="review" placeholder="Enter your movie review here..."></textarea>
+                <button type="submit">Analyze Sentiment</button>
+            </form>
+            <div id="progress-bar" class="progress-bar hidden"></div>
+            <div id="result" class="result hidden"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Credits: Hala Sedki, Omar Hesham, Yousef Hany, Hla El Sakka, Laila Ayman</p>
+    </footer>
+
+    <script>
+        document.getElementById('review-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const review = document.getElementById('review').value;
+            document.getElementById('progress-bar').classList.remove('hidden');
+            document.getElementById('result').classList.add('hidden');
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ review }),
+            });
+
+            const result = await response.json();
+            document.getElementById('progress-bar').classList.add('hidden');
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerText = `Sentiment: ${result.sentiment}`;
+            resultDiv.classList.remove('hidden');
+
+            if (result.sentiment === 'Positive') {
+                resultDiv.classList.add('positive');
+                resultDiv.classList.remove('negative');
+            } else {
+                resultDiv.classList.add('negative');
+                resultDiv.classList.remove('positive');
+            }
+        });
+    </script>
+</body>
+</html>
