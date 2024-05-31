@@ -6,12 +6,13 @@ This project aims to develop an efficient automated machine learning (AutoML) fr
 The IMDB dataset is a widely recognized benchmark for sentiment analysis, consisting of a large collection of movie reviews labeled with positive or negative sentiments. The dataset poses interesting challenges due to the nuances of language used in the reviews.
 
 ## Pipeline Steps
-Data Preprocessing: The raw text data is transformed into a format amenable to machine learning models. This includes tokenization, removal of stop words, and vectorization using TF-IDF.
-Feature Engineering: Additional features may be extracted from the text data to improve the model's performance.
-Model Training: Two models are trained and evaluated: a baseline logistic regression model and a fine-tuned BERT (Bidirectional Encoder Representations from Transformers) model.
-Model Evaluation: The trained models are evaluated using standard metrics such as accuracy, precision, recall, and F1 score.
-Model Deployment: The best-performing model is packaged and deployed as a Flask API, containerized using Docker for scalability and reproducibility.
-Setup Instructions
+- Data Preprocessing: The raw text data is transformed into a format amenable to machine learning models. This includes tokenization, removal of stop words, and vectorization using TF-IDF.
+- Feature Engineering: Additional features may be extracted from the text data to improve the model's performance.
+- Model Training: Two models are trained and evaluated: a baseline logistic regression model and a fine-tuned BERT (Bidirectional Encoder Representations from Transformers) model.
+- Model Evaluation: The trained models are evaluated using standard metrics such as accuracy, precision, recall, and F1 score.
+- Model Deployment: The best-performing model is packaged and deployed as a Flask API, containerized using Docker for scalability and reproducibility.
+  
+## Setup Instructions
 Clone the repository: git clone https://github.com/your-username/automated-sentiment-analysis.git
 Create a virtual environment and activate it.
 Install the required dependencies: pip install -r requirements.txt
