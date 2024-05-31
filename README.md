@@ -18,6 +18,11 @@ Create a virtual environment and activate it.
 Install the required dependencies: pip install -r requirements.txt
 Run the Flask API locally: python app.py
 
+### Requirements:
+- Flask==2.0.3
+- transformers==4.11.3
+- torch==1.10.0
+
 ## Folder structure:
 Folder structure:
 ml_pipeline   
